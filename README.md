@@ -1,6 +1,8 @@
 # OSCARI-es
 
-ElasticSearch 5.6.16 for Oscari museum system (or any dockerised CollectiveAccess installation)
+
+
+ElasticSearch 5.6.16 for Oscari museum system (or any dockerised CollectiveAccess installation). 
 Finnish CollectiveAccess container setup for Oscari can be found here: [https://github.com/artturimatias/CollectiveAccess](https://github.com/artturimatias/CollectiveAccess)
 
 based on:
@@ -12,7 +14,7 @@ This creates an ElasticSearch container that:
 
 - has security disabled (xpack.security.enabled: false)
 - uses Docker network called "oscari-net"
-- can be found for other containers in THAT network by hostanme "http://elasticsearch"
+- can be found for other containers in THAT network by hostname "http://elasticsearch"
 - uses volume called "esdata1"
 
 
@@ -28,9 +30,6 @@ Just make sure that they are on *same* network and your search.conf has these li
 	search_elasticsearch_base_url = http://elasticsearch:9200/
 
 	# This is the name of the ElasticSearch index used by CollectiveAccess.
-	# You probably don't need to change this unless you're using a single 
-	# ElasticSearch setup for multiple CollectiveAccess instances and/or
-	# other applications.
 	search_elasticsearch_index_name = collectiveaccess
 
 Then just build and run:
